@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Speech to Text Converter</title>
+</head>
+
+<body>
+    <div class="main_page">
+        <div class="header_text">Speech To Text Converter</div>
+        <form action="/speech-to-text" method="post" enctype="multipart/form-data">
+            <input type="file" name="upfile" required accept=".wav, .mp3" class="btn1"><br>
+            <input type="submit" value="Run Program" name="run" class="btn"><br>
+        </form>
+        <div>
+            <div class="dec_lan">{{ language }}</div>
+            <h3>Detected Text:</h3> 
+            <textarea id="out_text" placeholder="Output will show here..">{{ text }}</textarea><br>
+            <div>
+                <button onclick="copyText()" class="btn">Copy Text</button><br>
+                <button onclick="downloadCSV()" class="btn">Download .CSV</button><br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function copyText() {
+            var copyText = document.getElementById("out_text");
+            copyText.select();
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied...!");
+        }
+
+        function downloadCSV(){
+            var a = document.createElement('a');
+            with (a) {
+                href='data:text/csv;base64,' + btoa(document.getElementById('out_text').value);
+                download='Output.csv';
+            }
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+
+</html>
