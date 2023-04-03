@@ -20,8 +20,93 @@ def home():
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
     <title>Speech to Text Converter</title>
+    
+    <style>
+        *{
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .main_page{
+        height: auto;
+        width: auto;
+        padding: 2%;
+        margin: 2%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        box-shadow: 0px 0px 20px 1px;
+    }
+
+    .header_text{
+        height: auto;
+        padding: 5%;
+        border: 1px solid black;
+        text-align: center;
+        margin: 0 0 3% 0;
+        font-size: x-large;
+        font-family: monospace;
+        font-weight: bolder;
+    }
+
+    .dec_lan{
+        height: auto;
+        background-image: linear-gradient(rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.5));
+        margin: 3% 0 3% 0;
+        text-align: center;
+    }
+
+    .btn{
+        height: auto;
+        width: 100%;
+        padding: 3%;
+        margin: 3% 0 3% 0;
+        font-size: large;
+        font-family: monospace;
+        font-weight: bolder;
+    }
+
+    .btn:hover{
+        cursor: pointer;
+    }
+
+    #out_text{
+        height: 100px;
+        width: 98%;
+        outline: none;
+        padding: 1%;
+    }
+
+    .btn1{
+        height: auto;
+        width: 100%;
+        margin: 3% 0 3% 0;
+        font-size: large;
+        font-family: monospace;
+        font-weight: bolder;
+    }
+    .btn1:hover{
+        cursor: pointer;
+    }
+
+    input[type="file"]::file-selector-button {
+        height: auto;
+        width: auto;
+        padding: 3%;
+        margin: 0 3% 0 0;
+        font-size: large;
+        font-family: monospace;
+        font-weight: bolder;
+    }
+    
+    input[type="file"]::file-selector-button:hover {
+        cursor: pointer;
+    }
+    </style>
+    
 </head>
 
 <body>
